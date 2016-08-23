@@ -1,5 +1,109 @@
-$primary: #006699;
+@import 'button-custom';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
-h2 {
-	color: $primary;
+$primary: #006699;
+$break-small: 991px;
+
+h3 {
+  color: $primary;
+  font-weight:bold;
 }
+
+li{
+   cursor: pointer;
+ }
+.completed{
+  text-decoration: line-through;
+}
+
+body{
+  background: #dddddd;
+  font-family: 'Roboto', sans-serif;
+
+  .header{
+    background: #019288;
+    width:100%;
+    color: #ffffff;
+    padding:10px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .5);
+
+    p{
+      font-size: 40px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .task-add-wrapper{
+      height:67px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+
+  main{
+    .task-header{
+      border-top: 5px solid $primary;
+    }
+    .task{
+      padding: 15px;
+      background: #ffffff;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, .5);
+      margin: 15px 0;
+      }
+
+    ul{
+      list-style: none;
+      padding: 0;
+      max-height:500px;
+      overflow-y: auto;
+
+      @media screen and (max-width: $break-small) {
+        max-height: 250px;
+      }
+
+      li{
+        font-size: 18px;
+        padding-bottom:5px
+      }
+      li:hover{
+        background: #019288;
+        color: #ffffff;
+        transition: background .1s linear;
+      }
+    }
+    .task-details{
+      font-size: 16px;
+      max-height:500px;
+      overflow-y: auto;
+
+      @media screen and (max-width: $break-small) {
+        max-height: 150px;
+      }
+
+      h4{
+        text-decoration: underline;
+      }
+      .comments-on-task{
+        margin-bottom: 10px;
+        resize: vertical;
+      }
+    }
+
+  }
+
+  .footer{
+    position: fixed;
+    bottom:0;
+    background: #505354;
+    width:100%;
+    color: #ffffff;
+
+    p{
+      padding: 20px;
+    }
+  }
+}
+
+
