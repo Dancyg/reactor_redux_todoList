@@ -6,14 +6,23 @@ export const selectTask = (task)=>{
 };
 
 export const addListItem = (task={})=>{
-    task.title = document.getElementById('title').value;
-    task.description = document.getElementById('description').value;
-    task.comment ='';
-    task.completed ='';
-    return {
-        type: 'TASK_ADDED',
-        payload: task
+    let title = document.getElementById('title');
+    let description = document.getElementById('description');
+
+    if(title.value && description.value){
+        task.title = title.value;
+        task.description = description.value;
+        task.comment ='';
+        task.completed ='';
+        title.value = '';
+        description.value = '';
+
+        return {
+            type: 'TASK_ADDED',
+            payload: task
+        }
     }
+
 };
 
 export const taskCompleted = (task) =>{
@@ -24,9 +33,14 @@ export const taskCompleted = (task) =>{
 };
 
 export const addCommentsToTask = (task) =>{
-    task.comment = document.getElementById('comments').value;
-    return{
-        type: 'TASK_COMMENTED',
-        payload: task
+    let commentContainer = document.getElementById('comments');
+    if (commentContainer.value) {
+        task.comment = commentContainer.value;
+        commentContainer.value = '';
+
+        return {
+            type: 'TASK_COMMENTED',
+            payload: task
+        }
     }
 };
