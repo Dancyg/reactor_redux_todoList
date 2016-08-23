@@ -12,7 +12,7 @@ export const addListItem = (task={})=>{
     if(title.value && description.value){
         task.title = title.value;
         task.description = description.value;
-        task.comment ='';
+        task.comments =[''];
         task.completed ='';
         title.value = '';
         description.value = '';

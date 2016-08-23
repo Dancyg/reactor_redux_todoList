@@ -7,9 +7,9 @@ class TaskDetails extends Component{
     displayComments(){
         return(
             <div>
-                {this.props.task.comments.map((comment)=>{
+                {this.props.task.comments.map((comment, i)=>{
                     return(
-                        <p>
+                        <p key={i}>
                         {comment}
                         </p>
                     )
