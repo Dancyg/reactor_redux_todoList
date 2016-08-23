@@ -11,7 +11,7 @@ class TaskAdd extends Component{
         try {
             let result = json2csv({ data: this.props.tasks, fields: fields });
             var url = 'data:text/json;charset=utf8,' + encodeURIComponent(result);
-            window.open(url, 'download_window', 'toolbar=0,location=no,directories=0,status=0,scrollbars=0,resizeable=0,width=10,height=1,top=0,left=0');
+            window.open(url, 'download_window', 'toolbar=0,location=no,directories=0,status=0,scrollbars=0,resizeable=yes,width=500,height=400,top=0,left=0');
             window.focus();
         } catch (err) {
             console.error(err);
