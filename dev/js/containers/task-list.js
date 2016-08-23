@@ -8,10 +8,10 @@ class TaskList extends Component {
     createListItems(){
         return this.props.tasks.map((task, i)=>{
             return (
-                <li className="row task-list task "
+                <li className="task-list task "
                     key={i}
                     onClick={() => this.props.selectTask(task)}
-                >
+                ><div className="row">
                     <div className={"col-md-10 col-xs-9 " + task.completed}>
                         {task.title}
                     </div>
@@ -21,6 +21,8 @@ class TaskList extends Component {
                                 className="btn btn-default btst-custom"
                         >done</button>
                     </div>
+                </div>
+
                 </li>
             )
         })
@@ -31,9 +33,12 @@ class TaskList extends Component {
             <div className="col-md-7">
                 <div>
                     <h3 className="task-list task task-header">Task List:</h3>
-                    <ul>
-                        {this.createListItems()}
-                    </ul>
+                    <div className="list-container">
+                        <ul>
+                            {this.createListItems()}
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         )

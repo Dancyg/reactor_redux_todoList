@@ -35,7 +35,7 @@ export const taskCompleted = (task) =>{
 export const addCommentsToTask = (task) =>{
     let commentContainer = document.getElementById('comments');
     if (commentContainer.value) {
-        task.comment = commentContainer.value;
+        task.comments.push(commentContainer.value);
         commentContainer.value = '';
 
         return {

@@ -18,14 +18,14 @@ export default function (state=null, action) {
                         title: 'Buy vegetables',
                         description: 'Don\'t forget to buy a vegetables due to new diet',
                         completed: '',
-                        comment:''
+                        comments:['']
                     },
                     {
                         id:2,
                         title: 'New haircut',
                         description: 'To make a new haircut in that fashionable barber shop',
                         completed: '',
-                        comment:''
+                        comments:['']
                     }
                 ]
             }else{

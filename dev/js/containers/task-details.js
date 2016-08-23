@@ -4,6 +4,21 @@ import {bindActionCreators} from 'redux';
 import {addCommentsToTask} from '../actions/index'
 
 class TaskDetails extends Component{
+    displayComments(){
+        return(
+            <div>
+                {this.props.task.comments.map((comment)=>{
+                    return(
+                        <p>
+                        {comment}
+                        </p>
+                    )
+                })}
+            </div>
+
+        )
+    }
+
     render(){
         if(!this.props.task){
             return (
@@ -26,7 +41,7 @@ class TaskDetails extends Component{
                         <p>{this.props.task.description}</p>
                         <hr/>
                         <h4>Comments</h4>
-                        <p>{this.props.task.comment}</p>
+                        {this.displayComments()}
                         <textarea id='comments' className="form-control comments-on-task btst-custom"></textarea>
                         <button type="text" className="btn btn-default btst-custom"
                             onClick={()=>this.props.addCommentsToTask(this.props.task)}
